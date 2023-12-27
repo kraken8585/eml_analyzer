@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.4.2",
-    "axios": "^1.6.2",
+    "axios": "^1.6.3",
     "buefy": "0.9.25",
     "dayjs": "1.11.10",
     "filesize.js": "2.0.0",
