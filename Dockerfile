@@ -10,7 +10,7 @@ WORKDIR /usr/src/app/frontend
 RUN npm install && npm run build && rm -rf node_modules
 
 # Backend
-FROM python:3.11-slim-bookworm as backend
+FROM python:3.14.0a3-slim-bookworm as backend
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends build-essential libmagic-dev \
@@ -27,7 +27,7 @@ RUN poetry config virtualenvs.create false \
   && poetry install --without dev
 
 # Main
-FROM python:3.11-slim-bookworm
+FROM python:3.14.0a3-slim-bookworm
 
 COPY --from=backend /usr/local/lib/python3.11/site-packages/ /usr/local/lib/python3.11/site-packages/
 COPY --from=backend /usr/local/bin/ /usr/local/bin/
